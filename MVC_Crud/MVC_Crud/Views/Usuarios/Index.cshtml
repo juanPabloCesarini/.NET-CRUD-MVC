@@ -1,0 +1,37 @@
+﻿@model List<MVC_Crud.Models.viewModels.ListTablaViewModels>
+@{
+    ViewBag.Title = "Datos";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:right; padding:5px">
+    <a href="~/Usuarios/Nuevo" class="btn btn-primary">Nuevo</a>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table table-hover table-responsive">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Clave</th>
+                <th colspan="2" style="text-align:center;">Acciones</th>
+            </tr>
+            @foreach (var elemento in Model)
+            {
+        <tr>
+            <td>@elemento.id</td>
+            <td>@elemento.nombre</td>
+            <td>@elemento.apellido</td>
+            <td>@elemento.mail</td>
+            <td>@elemento.clave</td>
+            <td><a class="btn btn-success" href="~/Usuarios/Editar/@elemento.id">Modificar</a></td>
+            <td><a class="btn btn-danger" href="~/Usuarios/Eliminar/@elemento.id">Eliminar</a></td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>
+

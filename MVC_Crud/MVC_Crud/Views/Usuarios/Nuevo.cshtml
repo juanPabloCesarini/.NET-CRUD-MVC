@@ -1,0 +1,37 @@
+﻿@model MVC_Crud.Models.viewModels.TablaViewModels
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Usuarios", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                @Html.LabelFor(d => d.nombre)
+                @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.nombre, null, new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.apellido)
+                @Html.TextBoxFor(d => d.apellido, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.apellido, null, new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.mail)
+                @Html.TextBoxFor(d => d.mail, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.mail, null, new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.clave)
+                @Html.TextBoxFor(d => d.clave, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.clave, null, new { @class = "text-danger" })
+            </div>
+            <div style="text-align:right; padding:5px">
+                <input type="submit" class="btn btn-primary"value="Guardar" />
+            </div>
+        </div>
+
+    </div>
+}
